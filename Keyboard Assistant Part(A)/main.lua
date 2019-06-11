@@ -31,13 +31,27 @@ EnterButton.y = display.contentCenterY + 145
 EnterButton.id = "enterButton"
 
 local square = display.newImageRect ("assets/sprites/square.png", 30.1, 31.7)
-square.x = 95.5
+square.x = 217.2
 square.y = 119.1
 square.id = "square"
 
 
 t = {}
 
-t[1] = {x , 119.1}
+t[1] = {65 , 119.1}
 t[1].id = "49"
 
+
+t[2] = {95.5 , 119.1}
+t[2].id = "50"
+
+t[3] = {126.25,119.1}
+t[3].id = "51"
+
+t[4] = {156.5, 119.1}
+t[4].id = "52"
+
+t[5] = {186.7,119.1}
+t[5].id = "53"
+
+t[6] = {}
