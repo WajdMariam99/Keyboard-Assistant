@@ -300,6 +300,16 @@ t[36].id = "77"
 
 
 
+-- print (t[40].id)
+-- print( t[2][1])
+
+local myTable = { 'a', 'b', 'c', 'd' }
+
+i = math.random(1, 2)
+print(t[i][1])
+print(t[i][2])
+print( t[ math.random( #t ) ] )
+
 
 
 local functCheck = 0
@@ -322,6 +332,20 @@ print(t[i][2])
 print( t[ math.random( #t ) ] )
 
 
+-- local function namePrint( event )
+-- 	if (nameTextfield.text ~= "") then
+-- 		name.text = "Hi, ".. nameTextfield.text ..". Welcome!"
+-- 		print("Hi")
+-- 		functCheck = functCheck + 1
+-- 		print(functCheck)
+-- 		name:setFillColor( 1, 1, 1)
+-- 	else
+-- 		functCheck2 = functCheck2 +1
+-- 		print("write your name")
+-- 		nameText.text = "Write your name."
+-- 	end
+-- end
+	
 
 
 
@@ -360,7 +384,7 @@ local function CreateLight( )
 	i = math.random (1,36)
 	x = t[i][1]
     y = t[i][2]
-	light = display.newRoundedRect (x,y,17,17,2)
+	light = display.newRoundedRect (x,y,30.3,32,2)
 	light:setFillColor ( 0,0,0 )
 	light.alpha = 0.7
 
@@ -379,11 +403,14 @@ local function Game ( )
 end 
 
 
-local function time( )
-	a = a + 1
-	print("a:",..a )
-	display.newText("timer:".. a .. "", 50,40, "Times", 10)
-end
+-- local function time( )
+-- 	-- a = a + 1
+-- 	print("a:")
+-- 	display.newText("timer:".. a .. "", 50,40, "Times", 10)
+
+-- end
+
+
 
 
 
@@ -395,4 +422,23 @@ local function Start (event)
 		display.remove (StartButton)
 		display.remove (EnterButton)
 		display.remove (nameTextfield)
+		Keyboard.y = display.contentCenterY
+		Keyboard.width = 450
+		Keyboard.height = 250
+		timer.performWithDelay (1000,time,59)
+		functCheck3 = functCheck3 + 1 
+	elseif (functCheck2 >= 1) then
+		nameTextfield:setFillColor (1,0,0)
+	else
+		nameTextfield = "Write Your name"
+		print(functCheck)
+		print(functCheck2)
 
+	end 
+	timer.performWithDelay (1000,Game)
+
+end
+
+EnterButton:addEventListener ("touch", namePrint)
+
+StartButton:addEventListener ("touch", Start)
