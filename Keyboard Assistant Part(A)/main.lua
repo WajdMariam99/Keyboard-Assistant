@@ -121,7 +121,7 @@ nameTextfield.id = "Name TextField"
 
 
 
-local EnterButton = display.newImageRect ("assets/sprites/enterButton.png", 85 , 50)
+local EnterButton = display.newImageRect ("assets/sprites/enterButton.png", 60 , 60)
 
 
 
@@ -143,7 +143,7 @@ EnterButton.id = "enterButton"
 
 
 
-local letterEnterButton = display.newImageRect( "assets/LetterEnter.png", 80, 40)
+local letterEnterButton = display.newImageRect( "assets/sprites/enterButton.png", 60, 60)
 
 
 
@@ -163,7 +163,7 @@ letterEnterButton.id = "Letter Button"
 
 
 
-local StartButton = display.newImageRect ("assets/sprites/StartButton.png", 75, 50)
+local StartButton = display.newImageRect ("assets/sprites/StartButton.png", 70, 50)
 
 
 
@@ -198,8 +198,7 @@ slowRect.alpha = 0
 
 
 
-
-local slowEnterButton = display.newImageRect( "assets/sprites/SlowEnterButton.png", 80, 40)
+local slowEnterButton = display.newImageRect( "assets/sprites/enterButton.png", 60, 60)
 
 
 
@@ -267,9 +266,8 @@ local TimeUp = display.newText ("", 50, 40, "Times", 10)
 
 
 
-local percentage = display.newText( "", 100, 40, "Times", 10)
-
-
+local percentage = display.newText( "", 120, 30, "Times", 20)
+percentage:setFillColor ( 0, 0 , 0)
 
 local endText = display.newText ("", display.contentCenterX, 80, "Times", 13)
 
@@ -614,7 +612,7 @@ print( t[ math.random( #t ) ] )
 
 
  		nameText.text = "Hi, ".. nameTextfield.text ..":) Welcome!"
-  		nameText.x = display.contentCenterX
+  		nameText.x = display.contentCenterX + 10
  		nameText.y = display.contentCenterY + 150 
 
 
@@ -710,7 +708,7 @@ local function slowDown()
 
 
 
-	r = math.random(1, 17)
+	r = math.random(1, 18)
 
 
 
@@ -718,7 +716,7 @@ local function slowDown()
 
 
 
-	slowTextBox = native.newTextField( display.contentCenterX, 185, 100, 13	)
+	slowTextBox = native.newTextField( display.contentCenterX, 185, 50, 30	)
 
 
 
@@ -1252,5 +1250,3 @@ StartButton:addEventListener ("touch", Start)
 
 
 letterEnterButton:addEventListener ("touch", let )
-
-
